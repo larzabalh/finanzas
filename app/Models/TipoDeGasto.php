@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class TipoDeGasto
  * @package App\Models
- * @version May 10, 2018, 2:01 am UTC
+ * @version May 10, 2018, 11:49 am UTC
  */
 class TipoDeGasto extends Model
 {
@@ -16,6 +16,9 @@ class TipoDeGasto extends Model
 
     public $table = 'tipo_de_gastos';
     
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
 
     protected $dates = ['deleted_at'];
 
@@ -32,6 +35,7 @@ class TipoDeGasto extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
         'tipo' => 'string',
         'condicion' => 'integer',
         'user_id' => 'integer'
@@ -43,17 +47,23 @@ class TipoDeGasto extends Model
      * @var array
      */
     public static $rules = [
-        'tipo' => 'required'
+        
     ];
 
-    public function user(){
-
-        return $this->hasOne('App\User', 'id');
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class);
     }
 
-     public function gasto()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+
+    public function gasto()
     {
         return $this->hasMany('App\Models\Gasto');
     }
-    
 }

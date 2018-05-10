@@ -1,8 +1,6 @@
-<!-- User Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
-</div>
+<!-- UserId, Condicion Field -->
+    {!! Form::hidden('user_id', auth()->user()->id, null, ['class' => 'form-control']) !!}
+    {!! Form::hidden('condicion', 1, ['class' => 'form-control']) !!}
 
 <!-- Gasto Field -->
 <div class="form-group col-sm-6">
@@ -10,16 +8,10 @@
     {!! Form::text('gasto', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Condicion Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('condicion', 'Condicion:') !!}
-    {!! Form::text('condicion', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Tipo De Gasto Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('tipo_de_gasto_id', 'Seleccione el tipo de Gasto') !!}
-    {!! Form::select('tipo_de_gasto_id', $TipoDeGasto, null, ['class' => 'form-control']) !!}
+    {!! Form::label('tipo_de_gasto_id', 'Tipo De Gasto Id:') !!}
+    {!! Form::select('tipo_de_gasto_id', $TipoDeGastos, null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\TipoDeGastoDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateTipoDeGastoRequest;
 use App\Http\Requests\UpdateTipoDeGastoRequest;
 use App\Repositories\TipoDeGastoRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
-use App\User;
 
 class TipoDeGastoController extends AppBaseController
 {
@@ -25,16 +24,12 @@ class TipoDeGastoController extends AppBaseController
     /**
      * Display a listing of the TipoDeGasto.
      *
-     * @param Request $request
+     * @param TipoDeGastoDataTable $tipoDeGastoDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(TipoDeGastoDataTable $tipoDeGastoDataTable)
     {
-        $this->tipoDeGastoRepository->pushCriteria(new RequestCriteria($request));
-        $tipoDeGastos = $this->tipoDeGastoRepository->all();
-
-        return view('tipo_de_gastos.index')
-            ->with('tipoDeGastos', $tipoDeGastos);
+        return $tipoDeGastoDataTable->render('tipo_de_gastos.index');
     }
 
     /**
@@ -44,8 +39,7 @@ class TipoDeGastoController extends AppBaseController
      */
     public function create()
     {
-        $users = User::pluck('name','id');
-        return view('tipo_de_gastos.create',compact('users'));
+        return view('tipo_de_gastos.create');
     }
 
     /**
@@ -96,7 +90,6 @@ class TipoDeGastoController extends AppBaseController
     public function edit($id)
     {
         $tipoDeGasto = $this->tipoDeGastoRepository->findWithoutFail($id);
-        $users = User::pluck('name','id');
 
         if (empty($tipoDeGasto)) {
             Flash::error('Tipo De Gasto not found');
@@ -104,10 +97,7 @@ class TipoDeGastoController extends AppBaseController
             return redirect(route('tipoDeGastos.index'));
         }
 
-        return view('tipo_de_gastos.edit')
-                ->with('tipoDeGasto', $tipoDeGasto)
-                ->with('users', $users)
-                ;
+        return view('tipo_de_gastos.edit')->with('tipoDeGasto', $tipoDeGasto);
     }
 
     /**

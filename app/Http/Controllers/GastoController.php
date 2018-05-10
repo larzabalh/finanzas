@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\GastoDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateGastoRequest;
 use App\Http\Requests\UpdateGastoRequest;
 use App\Repositories\GastoRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 use App\User;
 use App\Models\TipoDeGasto;
@@ -26,16 +26,12 @@ class GastoController extends AppBaseController
     /**
      * Display a listing of the Gasto.
      *
-     * @param Request $request
+     * @param GastoDataTable $gastoDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(GastoDataTable $gastoDataTable)
     {
-        $this->gastoRepository->pushCriteria(new RequestCriteria($request));
-        $gastos = $this->gastoRepository->all();
-
-        return view('gastos.index')
-            ->with('gastos', $gastos);
+        return $gastoDataTable->render('gastos.index');
     }
 
     /**
@@ -45,13 +41,10 @@ class GastoController extends AppBaseController
      */
     public function create()
     {
-        $users = User::pluck('name','id');
-        $TipoDeGasto = TipoDeGasto::pluck('tipo','id');
+        
+        $TipoDeGastos = TipoDeGasto::pluck('tipo','id');
 
-        return view('gastos.create')
-                ->with('users', $users)
-                ->with('TipoDeGasto', $TipoDeGasto)
-                ;;
+        return view('gastos.create',compact('TipoDeGastos'));
     }
 
     /**
@@ -102,6 +95,7 @@ class GastoController extends AppBaseController
     public function edit($id)
     {
         $gasto = $this->gastoRepository->findWithoutFail($id);
+        $TipoDeGastos = TipoDeGasto::pluck('tipo','id');
 
         if (empty($gasto)) {
             Flash::error('Gasto not found');
@@ -109,7 +103,7 @@ class GastoController extends AppBaseController
             return redirect(route('gastos.index'));
         }
 
-        return view('gastos.edit')->with('gasto', $gasto);
+        return view('gastos.edit',compact('gasto','TipoDeGastos'));
     }
 
     /**

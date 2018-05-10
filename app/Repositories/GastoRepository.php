@@ -13,7 +13,6 @@ class GastoRepository extends BaseRepository
     protected $fieldSearchable = [
         'user_id',
         'gasto',
-        'condicion',
         'tipo_de_gasto_id'
     ];
 
