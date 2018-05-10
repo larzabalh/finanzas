@@ -27,8 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-      public function TipoDeGasto()
+      public function tipoDeGastos()
     {
         return $this->hasMany('App\Models\TipoDeGasto');
+    }
+
+        public function gasto()
+    {
+        return $this->hasMany('App\Models\Gasto');
     }
 }

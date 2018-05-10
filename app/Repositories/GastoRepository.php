@@ -2,18 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\TipoDeGasto;
+use App\Models\Gasto;
 use InfyOm\Generator\Common\BaseRepository;
 
-class TipoDeGastoRepository extends BaseRepository
+class GastoRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'tipo',
+        'user_id',
+        'gasto',
         'condicion',
-        'user_id'
+        'tipo_de_gasto_id'
     ];
 
     /**
@@ -21,6 +22,6 @@ class TipoDeGastoRepository extends BaseRepository
      **/
     public function model()
     {
-        return TipoDeGasto::class;
+        return Gasto::class;
     }
 }

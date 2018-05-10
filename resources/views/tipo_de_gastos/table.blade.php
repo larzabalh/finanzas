@@ -1,18 +1,16 @@
 <table class="table table-responsive" id="tipoDeGastos-table">
     <thead>
-        <th>User Id</th>
         <th>Tipo</th>
         <th>Condicion</th>
+        <th>User Id</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
-        {{$tipoDeGastos}}
     @foreach($tipoDeGastos as $tipoDeGasto)
         <tr>
-            <td>{!! $tipoDeGasto->user->name !!}</td>
-            
             <td>{!! $tipoDeGasto->tipo !!}</td>
             <td>{!! $tipoDeGasto->condicion !!}</td>
+            <td>{!! $tipoDeGasto->user->name !!}</td>
             <td>
                 {!! Form::open(['route' => ['tipoDeGastos.destroy', $tipoDeGasto->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\User;
 
 class TipoDeGastoController extends AppBaseController
 {
@@ -43,7 +44,8 @@ class TipoDeGastoController extends AppBaseController
      */
     public function create()
     {
-        return view('tipo_de_gastos.create');
+        $users = User::pluck('name','id');
+        return view('tipo_de_gastos.create',compact('users'));
     }
 
     /**
@@ -94,6 +96,7 @@ class TipoDeGastoController extends AppBaseController
     public function edit($id)
     {
         $tipoDeGasto = $this->tipoDeGastoRepository->findWithoutFail($id);
+        $users = User::pluck('name','id');
 
         if (empty($tipoDeGasto)) {
             Flash::error('Tipo De Gasto not found');
@@ -101,7 +104,10 @@ class TipoDeGastoController extends AppBaseController
             return redirect(route('tipoDeGastos.index'));
         }
 
-        return view('tipo_de_gastos.edit')->with('tipoDeGasto', $tipoDeGasto);
+        return view('tipo_de_gastos.edit')
+                ->with('tipoDeGasto', $tipoDeGasto)
+                ->with('users', $users)
+                ;
     }
 
     /**

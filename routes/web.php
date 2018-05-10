@@ -20,4 +20,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
+
+
+
 Route::resource('tipoDeGastos', 'TipoDeGastoController');
+
+Route::resource('gastos', 'GastoController');
+
+Route::resource('probandos', 'ProbandoController');
