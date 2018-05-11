@@ -54,6 +54,7 @@ class Gasto extends Model
     public function tipoDeGasto(){
 
         return $this->hasOne('App\Models\TipoDeGasto', 'id');
+        return $this->belongsTo('App\Models\TipoDeGasto', 'tipo_de_gasto_id', 'id');
     }
 
     
