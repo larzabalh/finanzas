@@ -27,7 +27,7 @@ class GastoDataTable extends DataTable
      */
     public function query()
     {
-        $gastos = Gasto::query();
+        $gastos = Gasto::with('tipoDeGasto');
 
         return $this->applyScopes($gastos);
     }
@@ -74,7 +74,7 @@ class GastoDataTable extends DataTable
         return [
             'Usuario' => ['name' => 'user_id', 'data' => 'user_id'],
             'gasto' => ['name' => 'gasto', 'data' => 'gasto'],
-            'Tipo' => ['name' => 'tipo_de_gasto_id', 'data' => 'tipo_de_gasto_id']
+            'Tipo' => ['name' => 'tipo_de_gasto_id', 'data' => 'tipoDeGasto.tipo']
         ];
     }
 
