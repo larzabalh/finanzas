@@ -4,16 +4,16 @@
     <p>{!! $gasto->id !!}</p>
 </div>
 
-<!-- User Id Field -->
-<div class="form-group">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $gasto->user_id !!}</p>
-</div>
-
 <!-- Gasto Field -->
 <div class="form-group">
     {!! Form::label('gasto', 'Gasto:') !!}
     <p>{!! $gasto->gasto !!}</p>
+</div>
+
+<!-- User Id Field -->
+<div class="form-group">
+    {!! Form::label('user_id', 'User Id:') !!}
+    <p>{!! $gasto->user_id !!}</p>
 </div>
 
 <!-- Condicion Field -->

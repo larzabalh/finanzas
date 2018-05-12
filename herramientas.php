@@ -1,10 +1,10 @@
 <?php 
 
-php artisan infyom:scaffold $MODEL_NAME --fromTable --tableName=$TABLE_NAME -> lo genera desde las migration
+php artisan infyom:scaffold $MODEL_NAME --fromTable --tableName=$TABLE_NAME --save --datatables=true -> lo genera desde las migration
 
-php artisan infyom:scaffold $MODEL_NAME --datatables=true
+php artisan infyom:scaffold Gasto --save --datatables=true
 
-integer:unsigned:foreign,table_name,id select
+integer:unsigned:foreign,users,id select
 
 $users = User::pluck('name','id')
 

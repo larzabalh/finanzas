@@ -11,8 +11,9 @@ class GastoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'user_id',
         'gasto',
+        'user_id',
+        'condicion',
         'tipo_de_gasto_id'
     ];
 

@@ -1,11 +1,19 @@
-<!-- User_Id,Condicion Field -->
-	{!! Form::hidden('user_id', auth()->user()->id, null, ['class' => 'form-control']) !!}
-    {!! Form::hidden('condicion', 1, ['class' => 'form-control']) !!}
+<!-- User Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('user_id', 'User Id:') !!}
+    {!! Form::number('user_id', null, ['class' => 'form-control']) !!}
+</div>
 
 <!-- Tipo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('tipo', 'Tipo:') !!}
     {!! Form::text('tipo', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Condicion Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('condicion', 'Condicion:') !!}
+    {!! Form::text('condicion', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

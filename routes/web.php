@@ -28,7 +28,13 @@ Route::get('/home', 'HomeController@index');
 
 
 
-Route::resource('probandos', 'ProbandoController');
+
+
+
+
+
+
+
 
 Route::resource('tipoDeGastos', 'TipoDeGastoController');
 

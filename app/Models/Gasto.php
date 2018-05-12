@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Gasto
  * @package App\Models
- * @version May 10, 2018, 12:07 pm UTC
+ * @version May 12, 2018, 4:15 am UTC
  */
 class Gasto extends Model
 {
@@ -21,8 +21,8 @@ class Gasto extends Model
 
 
     public $fillable = [
-        'user_id',
         'gasto',
+        'user_id',
         'condicion',
         'tipo_de_gasto_id'
     ];
@@ -33,8 +33,8 @@ class Gasto extends Model
      * @var array
      */
     protected $casts = [
-        'user_id' => 'integer',
         'gasto' => 'string',
+        'user_id' => 'integer',
         'condicion' => 'integer',
         'tipo_de_gasto_id' => 'integer'
     ];
@@ -45,17 +45,19 @@ class Gasto extends Model
      * @var array
      */
     public static $rules = [
-        'user_id' => 'required',
         'gasto' => 'required',
-        'condicion' => 'required',
+        'user_id' => 'required',
         'tipo_de_gasto_id' => 'required'
     ];
 
-    public function tipoDeGasto(){
-
-        return $this->hasOne('App\Models\TipoDeGasto', 'id');
-        return $this->belongsTo('App\Models\TipoDeGasto', 'tipo_de_gasto_id', 'id');
+    //Relacion
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id','id');
     }
-
+  //Relacion
+  public function tipo_de_gasto() {
+        return $this->belongsTo('App\Models\TipoDeGasto', 'tipo_de_gasto_id','id'); // Le indicamos que se va relacionar con el atributo id
+    }
     
 }

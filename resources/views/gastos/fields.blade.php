@@ -1,6 +1,6 @@
-<!-- UserId, Condicion Field -->
-    {!! Form::hidden('user_id', auth()->user()->id, null, ['class' => 'form-control']) !!}
+<!-- Condicion Field -->
     {!! Form::hidden('condicion', 1, ['class' => 'form-control']) !!}
+    {!! Form::hidden('user_id', auth()->user()->id , ['class' => 'form-control']) !!}
 
 <!-- Gasto Field -->
 <div class="form-group col-sm-6">

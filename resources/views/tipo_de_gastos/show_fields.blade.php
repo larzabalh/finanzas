@@ -4,6 +4,12 @@
     <p>{!! $tipoDeGasto->id !!}</p>
 </div>
 
+<!-- User Id Field -->
+<div class="form-group">
+    {!! Form::label('user_id', 'User Id:') !!}
+    <p>{!! $tipoDeGasto->user_id !!}</p>
+</div>
+
 <!-- Tipo Field -->
 <div class="form-group">
     {!! Form::label('tipo', 'Tipo:') !!}
@@ -14,12 +20,6 @@
 <div class="form-group">
     {!! Form::label('condicion', 'Condicion:') !!}
     <p>{!! $tipoDeGasto->condicion !!}</p>
-</div>
-
-<!-- User Id Field -->
-<div class="form-group">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $tipoDeGasto->user_id !!}</p>
 </div>
 
 <!-- Created At Field -->

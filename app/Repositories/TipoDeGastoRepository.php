@@ -11,9 +11,9 @@ class TipoDeGastoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'user_id',
         'tipo',
-        'condicion',
-        'user_id'
+        'condicion'
     ];
 
     /**
