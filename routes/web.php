@@ -49,3 +49,9 @@ Route::resource('liquidadors', 'LiquidadorController');
 Route::resource('medios', 'MedioController');
 
 Route::resource('disponibilidads', 'DisponibilidadController');
+
+Route::resource('formaDePagos', 'FormaDePagoController');
+
+Route::resource('cobradors', 'CobradorController');
+
+Route::resource('clientes', 'ClienteController');

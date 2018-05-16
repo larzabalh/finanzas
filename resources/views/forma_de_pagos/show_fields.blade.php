@@ -1,54 +1,48 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $disponibilidad->id !!}</p>
+    <p>{!! $formaDePago->id !!}</p>
 </div>
 
 <!-- User Id Field -->
 <div class="form-group">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $disponibilidad->user->name !!}</p>
+    {!! Form::label('user_id', 'Usuario:') !!}
+    <p>{!! $formaDePago->user->name !!}</p>
 </div>
 
 <!-- Nombre Field -->
 <div class="form-group">
     {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{!! $disponibilidad->nombre !!}</p>
-</div>
-
-<!-- Comentario Field -->
-<div class="form-group">
-    {!! Form::label('comentario', 'Comentario:') !!}
-    <p>{!! $disponibilidad->comentario !!}</p>
+    <p>{!! $formaDePago->nombre !!}</p>
 </div>
 
 <!-- Condicion Field -->
 <div class="form-group">
     {!! Form::label('condicion', 'Condicion:') !!}
-    <p>{!! $disponibilidad->condicion !!}</p>
+    <p>{!! $formaDePago->condicion !!}</p>
 </div>
 
-<!-- Medio Id Field -->
+<!-- Disponibilidad Id Field -->
 <div class="form-group">
-    {!! Form::label('medio_id', 'Medio Id:') !!}
-    <p>{!! $disponibilidad->medio->nombre !!}</p>
+    {!! Form::label('disponibilidad_id', 'Disponibilidad:') !!}
+    <p>{!! $formaDePago->disponibilidad->nombre !!}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $disponibilidad->created_at !!}</p>
+    <p>{!! $formaDePago->created_at !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $disponibilidad->updated_at !!}</p>
+    <p>{!! $formaDePago->updated_at !!}</p>
 </div>
 
 <!-- Deleted At Field -->
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $disponibilidad->deleted_at !!}</p>
+    <p>{!! $formaDePago->deleted_at !!}</p>
 </div>
 

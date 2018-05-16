@@ -1,6 +1,6 @@
 <?php 
 
-php artisan infyom:scaffold Disponibilidad --fromTable --tableName=disponibilidades --save --datatables=true -> lo genera desde las tablas de la BD
+php artisan infyom:scaffold Cliente --fromTable --tableName=clientes --save --datatables=true -> lo genera desde las tablas de la BD
 
 php artisan infyom:scaffold Gasto --save --datatables=true
 

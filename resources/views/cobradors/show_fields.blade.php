@@ -1,54 +1,48 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $disponibilidad->id !!}</p>
+    <p>{!! $cobrador->id !!}</p>
 </div>
 
 <!-- User Id Field -->
 <div class="form-group">
     {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $disponibilidad->user->name !!}</p>
+    <p>{!! $cobrador->user->name !!}</p>
 </div>
 
-<!-- Nombre Field -->
+<!-- Cobrador Field -->
 <div class="form-group">
-    {!! Form::label('nombre', 'Nombre:') !!}
-    <p>{!! $disponibilidad->nombre !!}</p>
+    {!! Form::label('cobrador', 'Cobrador:') !!}
+    <p>{!! $cobrador->cobrador !!}</p>
 </div>
 
 <!-- Comentario Field -->
 <div class="form-group">
     {!! Form::label('comentario', 'Comentario:') !!}
-    <p>{!! $disponibilidad->comentario !!}</p>
+    <p>{!! $cobrador->comentario !!}</p>
 </div>
 
 <!-- Condicion Field -->
 <div class="form-group">
     {!! Form::label('condicion', 'Condicion:') !!}
-    <p>{!! $disponibilidad->condicion !!}</p>
-</div>
-
-<!-- Medio Id Field -->
-<div class="form-group">
-    {!! Form::label('medio_id', 'Medio Id:') !!}
-    <p>{!! $disponibilidad->medio->nombre !!}</p>
+    <p>{!! $cobrador->condicion !!}</p>
 </div>
 
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $disponibilidad->created_at !!}</p>
+    <p>{!! $cobrador->created_at !!}</p>
 </div>
 
 <!-- Updated At Field -->
 <div class="form-group">
     {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $disponibilidad->updated_at !!}</p>
+    <p>{!! $cobrador->updated_at !!}</p>
 </div>
 
 <!-- Deleted At Field -->
 <div class="form-group">
     {!! Form::label('deleted_at', 'Deleted At:') !!}
-    <p>{!! $disponibilidad->deleted_at !!}</p>
+    <p>{!! $cobrador->deleted_at !!}</p>
 </div>
 
