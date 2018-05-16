@@ -10,7 +10,7 @@
 
 <!-- Tipo De Gasto Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('tipo_de_gasto_id', 'Tipo De Gasto Id:') !!}
+    {!! Form::label('tipo_de_gasto_id', 'Seleccionar Tipo:') !!}
     {!! Form::select('tipo_de_gasto_id', $TipoDeGastos, null, ['class' => 'form-control']) !!}
 </div>
 

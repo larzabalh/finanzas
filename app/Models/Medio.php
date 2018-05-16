@@ -6,25 +6,27 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Gasto
+ * Class Medio
  * @package App\Models
- * @version May 12, 2018, 4:15 am UTC
+ * @version May 16, 2018, 1:35 am UTC
  */
-class Gasto extends Model
+class Medio extends Model
 {
     use SoftDeletes;
 
-    public $table = 'gastos';
+    public $table = 'medios';
     
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'gasto',
         'user_id',
-        'condicion',
-        'tipo_de_gasto_id'
+        'nombre',
+        'condicion'
     ];
 
     /**
@@ -33,10 +35,10 @@ class Gasto extends Model
      * @var array
      */
     protected $casts = [
-        'gasto' => 'string',
+        'id' => 'integer',
         'user_id' => 'integer',
-        'condicion' => 'integer',
-        'tipo_de_gasto_id' => 'integer'
+        'nombre' => 'string',
+        'condicion' => 'string'
     ];
 
     /**
@@ -45,7 +47,7 @@ class Gasto extends Model
      * @var array
      */
     public static $rules = [
-        'gasto' => "required|max:255|unique:gastos",
+        'gasto' => "required|max:255|unique:medios",
         'user_id' => 'required',
         'tipo_de_gasto_id' => 'required'
     ];
@@ -55,9 +57,12 @@ class Gasto extends Model
     {
         return $this->belongsTo('App\User', 'user_id','id');
     }
-  //Relacion
-  public function tipo_de_gasto() {
-        return $this->belongsTo('App\Models\TipoDeGasto', 'tipo_de_gasto_id','id'); // Le indicamos que se va relacionar con el atributo id
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function disponibilidades()
+    {
+        return $this->hasMany(\App\Models\Disponibilidade::class);
     }
-    
 }

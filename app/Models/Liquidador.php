@@ -6,15 +6,15 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class TipoDeGasto
+ * Class Liquidador
  * @package App\Models
- * @version May 12, 2018, 4:01 am UTC
+ * @version May 16, 2018, 1:32 am UTC
  */
-class TipoDeGasto extends Model
+class Liquidador extends Model
 {
     use SoftDeletes;
 
-    public $table = 'tipos_degastos';
+    public $table = 'liquidadores';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -25,7 +25,8 @@ class TipoDeGasto extends Model
 
     public $fillable = [
         'user_id',
-        'tipo',
+        'liquidador',
+        'comentario',
         'condicion'
     ];
 
@@ -37,7 +38,8 @@ class TipoDeGasto extends Model
     protected $casts = [
         'id' => 'integer',
         'user_id' => 'integer',
-        'tipo' => 'string',
+        'liquidador' => 'string',
+        'comentario' => 'string',
         'condicion' => 'string'
     ];
 
@@ -47,10 +49,8 @@ class TipoDeGasto extends Model
      * @var array
      */
     public static $rules = [
-        'tipo' => "required|max:255|unique:tipos_degastos",
-        
+        'facturador' => "required|max:255|unique:liquidadores",
     ];
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -62,8 +62,8 @@ class TipoDeGasto extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function gastos()
+    public function clientes()
     {
-        return $this->hasMany('App\Models\Gasto');
+        return $this->hasMany(\App\Models\Cliente::class);
     }
 }

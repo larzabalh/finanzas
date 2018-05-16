@@ -92,6 +92,7 @@ class GastoController extends AppBaseController
     public function edit($id)
     {
         $gasto = $this->gastoRepository->findWithoutFail($id);
+        $TipoDeGastos = TipoDeGasto::pluck('tipo','id');
 
         if (empty($gasto)) {
             Flash::error('Gasto not found');
@@ -99,7 +100,7 @@ class GastoController extends AppBaseController
             return redirect(route('gastos.index'));
         }
 
-        return view('gastos.edit')->with('gasto', $gasto);
+        return view('gastos.edit',compact('gasto','TipoDeGastos'));
     }
 
     /**

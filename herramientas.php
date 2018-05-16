@@ -1,6 +1,6 @@
 <?php 
 
-php artisan infyom:scaffold $MODEL_NAME --fromTable --tableName=$TABLE_NAME --save --datatables=true -> lo genera desde las migration
+php artisan infyom:scaffold Disponibilidad --fromTable --tableName=disponibilidades --save --datatables=true -> lo genera desde las tablas de la BD
 
 php artisan infyom:scaffold Gasto --save --datatables=true
 

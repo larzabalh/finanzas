@@ -41,3 +41,11 @@ Route::resource('tipoDeGastos', 'TipoDeGastoController');
 
 
 Route::resource('gastos', 'GastoController');
+
+Route::resource('facturadors', 'FacturadorController');
+
+Route::resource('liquidadors', 'LiquidadorController');
+
+Route::resource('medios', 'MedioController');
+
+Route::resource('disponibilidads', 'DisponibilidadController');
