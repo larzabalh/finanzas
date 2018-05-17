@@ -20,13 +20,13 @@ class CreateClientesTable extends Migration
             $table->string('cliente')->unique();
             $table->float('honorario')->nullable();
             $table->string('email')->nullable();
-            $table->integer('facturador_id')->unsigned()->nullable();
+            $table->integer('facturador_id')->unsigned()->default(1);
             $table->foreign('facturador_id')->references('id')->on('facturadores');
-            $table->integer('liquidador_id')->unsigned()->nullable();
+            $table->integer('liquidador_id')->unsigned()->default(1);
             $table->foreign('liquidador_id')->references('id')->on('liquidadores');
-            $table->integer('cobrador_id')->unsigned()->nullable();
+            $table->integer('cobrador_id')->unsigned()->default(1);
             $table->foreign('cobrador_id')->references('id')->on('cobradores');
-            $table->integer('disponibilidad_id')->unsigned()->nullable();
+            $table->integer('disponibilidad_id')->unsigned()->default(1);
             $table->foreign('disponibilidad_id')->references('id')->on('disponibilidades');
             $table->string('contacto')->nullable();
             $table->string('comentario')->nullable();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c781450d382eea82b413b27a2aa780a",
+    "content-hash": "32ba2ab13f86b9e803aac6a0db4f0e22",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1429,7 +1429,7 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.1.28",
+            "version": "2.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
@@ -4922,7 +4922,8 @@
         "infyomlabs/adminlte-templates": 20,
         "infyomlabs/laravel-generator": 20,
         "infyomlabs/swagger-generator": 20,
-        "jlapp/swaggervel": 20
+        "jlapp/swaggervel": 20,
+        "maatwebsite/excel": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

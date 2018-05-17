@@ -26,6 +26,7 @@ class CreateCobradoresTable extends Migration
         });
 
         DB::table('cobradores')->insert([
+          ['user_id' => 1, 'cobrador' => 'SIN ASIGNAR'],
           ['user_id' => 1, 'cobrador' => 'HERNAN'],
           ['user_id' => 1, 'cobrador' => 'GRACIELA'],
           ['user_id' => 1, 'cobrador' => 'BETTY'],

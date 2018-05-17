@@ -17,7 +17,7 @@ class CreateFacturadoresTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('facturador')->nullable();
+            $table->string('facturador')->default(1);
             $table->string('comentario')->nullable();
             $table->string('condicion')->default(1);
             $table->timestamps();
@@ -25,6 +25,7 @@ class CreateFacturadoresTable extends Migration
         });
 
         DB::table('facturadores')->insert([
+          ['user_id' => 1, 'facturador' => 'SIN ASIGNAR'],
           ['user_id' => 1, 'facturador' => 'IN TIME SRL'],
           ['user_id' => 1, 'facturador' => 'TORTORELLI VANESA'],
           ['user_id' => 1, 'facturador' => 'LARZABAL HERNAN'],

@@ -25,6 +25,7 @@ class CreateLiquidadoresTable extends Migration
         });
 
         DB::table('liquidadores')->insert([
+          ['user_id' => 1, 'liquidador' => 'SIN ASIGNAR'],
           ['user_id' => 1, 'liquidador' => 'JOSE LUIS'],
           ['user_id' => 1, 'liquidador' => 'FLORENCIA'],
           ['user_id' => 1, 'liquidador' => 'ELIZABET'],

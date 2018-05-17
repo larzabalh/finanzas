@@ -2,7 +2,7 @@
     <a href="/">
       <i class="fa fa-tasks"></i> <span>Escritorio</span>
     </a>
-    <a href="#">
+    <a href="{!! route('importar.index') !!}">
       <i class="fa fa-tasks"></i> <span>IMPORTAR</span>
     </a>
 </li>

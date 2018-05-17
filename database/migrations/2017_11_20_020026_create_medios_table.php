@@ -24,6 +24,7 @@ class CreateMediosTable extends Migration
             $table->softDeletes();
         });
         DB::table('medios')->insert([
+          ['user_id' => 1, 'nombre' => 'SIN ASIGNAR'],
           ['user_id' => 1, 'nombre' => 'CAJA'],
           ['user_id' => 1, 'nombre' => 'SANTANDER'],
           ['user_id' => 1, 'nombre' => 'HSBC'],

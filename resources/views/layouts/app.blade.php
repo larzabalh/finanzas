@@ -88,7 +88,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer" style="max-height: 100px;text-align: center">
-        <strong>Copyright © 2016 <a href="http://infyom.com" target="_blank">InfyOm Technologies</a>.</strong> All rights reserved.
+        <strong>LARZABAL HERNAN<a href="http://tucontadorpublico.com.ar" target="_blank">Tu Contador Publico</a>.</strong> All rights reserved.
     </footer>
 
 </div>
