@@ -64,3 +64,5 @@ Route::resource('formaDePagos', 'FormaDePagoController');
 Route::resource('cobradors', 'CobradorController');
 
 Route::resource('clientes', 'ClienteController');
+
+Route::resource('ingresoMensuals', 'IngresoMensualController');

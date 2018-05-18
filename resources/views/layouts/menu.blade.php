@@ -53,3 +53,7 @@
 
 
 
+<li class="{{ Request::is('ingresoMensuals*') ? 'active' : '' }}">
+    <a href="{!! route('ingresoMensuals.index') !!}"><i class="fa fa-edit"></i><span>IngresoMensuals</span></a>
+</li>
+
